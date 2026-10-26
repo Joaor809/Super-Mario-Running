@@ -1,0 +1,24 @@
+{
+  "name": "super-mario-running",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joaor809/Super-Mario-Running.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Joaor809/Super-Mario-Running/issues"
+  },
+  "homepage": "https://github.com/Joaor809/Super-Mario-Running#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
