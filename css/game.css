@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.game-board {
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 14px solid green;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#5252ff, white)
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+}
+
+.clouds {
+    position: absolute;
+    width: 50%;
+    animation: clouds-animation 15s infinite linear;
+}
+
+.jump {
+    animation: jump 400ms ease-out;
+}
+
+.modal-game-over {
+    position: absolute;
+    width: 30vw;
+    height: 100vw;
+    background: url("../img/screen-game-over.png") center / contain no-repeat;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.btn {
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 22px;
+    border-radius: 10px;
+    background-color: #8080ea;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 2px black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: #8080ea;
+    text-shadow: none;
+    transform: scale(1.1);
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 110%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.score {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: fit-content;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 2px 14px 3px black;
+}

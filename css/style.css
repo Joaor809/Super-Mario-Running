@@ -1,137 +1,80 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Press+Start+2P&display=swap');
+
+html, body{
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
 }
-
-.game-board {
-    margin: 0 auto;
-    width: 100%;
-    border-bottom: 14px solid green;
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#5252ff, white)
-}
-
-.pipe {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
-}
-
-.mario {
-    position: absolute;
-    bottom: 0;
-    width: 120px;
-}
-
-.clouds {
-    position: absolute;
-    width: 50%;
-    animation: clouds-animation 15s infinite linear;
-}
-
-.jump {
-    animation: jump 400ms ease-out;
-}
-
-.modal-game-over {
-    position: absolute;
-    width: 30vw;
-    height: 100vw;
-    background: url("../img/screen-game-over.png") center / contain no-repeat;
-    border-radius: 10px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
-.buttons {
-    position: absolute;
-    bottom: 40%;
-    width: 100%;
-    height: auto;
+body{
+    background-color: #5c94fc;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
 }
-.btn {
-    border: none;
-    width: auto;
-    height: auto;
-    padding: 22px;
-    border-radius: 10px;
-    background-color: #8080ea;
-    color: white;
+h1{
+    font-family: "Press Start 2P", system-ui;
+    margin: 0;
+    text-transform: uppercase;
+    z-index: 1;
+}
+h1 span {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+.top {
+    font-size: 28px;
+    text-shadow: 5px 5px black;
+}
+.main {
+    font-size: 60px;
+    text-shadow: 5px 5px black;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #000;
+}
+.sub {
+    font-size: 28px;
+    text-shadow: 3px 3px black;
+}
+
+button {
+    margin-top: 48px;
+    padding: 14px 36px;
+    border: 4px solid black;
+    background: #e52521;
+    box-shadow: 0 6px 0 #7a0f0d;
+    font-family: "Oxanium", system-ui;
     font-weight: bold;
-    text-shadow: 1px 2px black;
-    transition: all 0.3s ease;
     cursor: pointer;
+    font-size: 18px;
+    color: white;
+    animation: blink 1.2s steps(2) infinite;
+    z-index: 1;
 }
-.btn:hover{
-    background-color: white;
-    color: #8080ea;
-    text-shadow: none;
-    transform: scale(1.1);
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #7a0f0d;
 }
-
-@keyframes pipe-animation {
-    from {
-        right: -80px;
-    }
-
-    to {
-        right: 110%;
-    }
+@keyframes blink {
+    50% { background: #ff5a55; }
 }
 
-@keyframes jump {
-    0% {
-        bottom: 0;
-    }
-
-    40% {
-        bottom: 180px;
-    }
-
-    50% {
-        bottom: 180px;
-    }
-
-    60% {
-        bottom: 180px;
-    }
-
-    100% {
-        bottom: 0;
-    }
+.hint {
+    margin-top: 18px;
+    font-size: 17px;
+    z-index: 1;
+    text-shadow: 2px 2px 0 black;
+    font-family: "Oxanium", system-ui;
 }
 
-@keyframes clouds-animation {
-    from {
-        right: -50%;
-    }
-
-    to {
-        right: 100%;
-    }
-}
-
-.score {
-    z-index: 10;
+.ground {
     position: absolute;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    margin-top: 3rem;
-    width: fit-content;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.4);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    box-shadow: 0 2px 14px 3px black;
+    bottom: 0;
+    height: 75px;
+    background-color: #c84c0c;
+    border-top: 14px solid #3ea53e;
 }

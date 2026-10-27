@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario - Run</title>
-    <link rel="stylesheet" href="css/style.css?v=1">
-</head>
-
-<body>
-    <div class="game-board">
-        <div class="score">
-            <p class="score-text"></p>
-        </div>
-        <img src="img/clouds.png" class="clouds">
-        <img src="img/pipe.png" class="pipe">
-        <img src="img/mario.gif" class="mario">
-    </div>
-    <div class="modal-game-over">
-        <div class="buttons">
-            <button class="btn btn-reload" type="button">Tentar Novamente</button>
-        </div>
-    </div>
-</body>
-<script src="src/script.js" type="module"></script>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela Inicial - Super Mario Running</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>
+      <span class="top">Super</span>
+      <br />
+      <span class="main">Mario</span>
+      <br />
+      <span class="sub">Running</span>
+    </h1>
+    <button id="start">START</button>
+    <div class="hint">Pressione ENTER ou clique para começar</div>
+    <div class="ground"></div>
+  </body>
+  <script>
+    const buttonStart = document.getElementById("start");
+    function startGame() {
+        window.location.href = "./game.html";
+    }
+    buttonStart.addEventListener("click", startGame);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            startGame();
+        }
+    })
+  </script>
 </html>
